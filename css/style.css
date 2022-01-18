@@ -13,14 +13,7 @@ main {
 
 /* ----------------------------------------------- */
 
-.contact_list ul > li {
-    list-style: none;
-}
-
-.contact_list ul li > img {
-    width: 70px;
-}
-
+/* NAVBAR - header */
 .profile_pic > img {
     width: 60px;
 }
@@ -29,6 +22,8 @@ main {
     font-size: 20px;
     margin: 0 5px;
 }
+
+/* NAVBAR - notification */
 
 .notification {
     background-color: #8fd9fc;
@@ -43,6 +38,8 @@ main {
     cursor: pointer;
 }
 
+/* NAVBAR - serch form */
+
 .search_contact {
   background-color: #fafafa;
 }
@@ -51,6 +48,40 @@ main {
     font-size: 12px;
 }
 
+/* NAVBAR - contacts */
+
+.contact_list ul > li {
+    list-style: none;
+}
+
+.contact_list ul li > img {
+    width: 70px;
+}
+
+/* MAIN - content */
+.chat > .message_box {
+    width: 100%;
+}
+
+.message_box .sent {
+    max-width: 300px;
+    border-radius: 15px;
+    float: right;
+    background-color: #d5f9ba;
+}
+
+.message_box .received {
+    max-width: 300px;
+    border-radius: 15px;
+    float: left;
+    background-color: #fff;
+}
+
+.message .message_date {
+    font-size: 11px;
+}
+
+/* MAIN - footer */
 .main_footer {
     height: 70px;
     background-color: #f4eee9;

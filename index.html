@@ -70,7 +70,7 @@
 
                     <!-- MAIN -->
                     <div class="col-lg-8 g-0">
-                        <main class="w-100 d-flex flex-column">
+                        <main class="d-flex flex-column">
                             <!-- top -->
                             <div class="main_header">
                                 <div class="user_info w-100 d-flex justify-content-between align-items-center bg-light py-2 px-3">
@@ -87,8 +87,16 @@
                                 </div>
                             </div>
                             <!-- main content -->
-                            <div class="main_content h-100">
-
+                            <div class="main_content h-100 mx-5">
+                                <div class="chat d-flex flex-column my-5">
+                                    <!-- per ogni message mell'array messages in contacts[o] -->
+                                    <div class="message_box" v-for="(message, index) in contacts[0].messages">
+                                        <div class="message p-3 my-3" :class="message.status === 'sent' ? 'sent':'received' ">
+                                            <div class="message_text">{{message.text}}</div>
+                                            <div class="message_date text-secondary text-end">{{message.date}}</div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <!-- main footer -->
                             <div class="main_footer d-flex justify-content-between align-items-center text-center">
