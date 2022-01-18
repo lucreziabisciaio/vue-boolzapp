@@ -43,14 +43,21 @@
                                 </div>
                                 <div class="notif_alert">
                                     <div>Ricevi notifiche di nuovi messaggi</div>
-                                    <div class="text-decoration-underline text-secondary">Attiva notifiche desktop</div>
+                                    <div class="enable_notif text-decoration-underline text-secondary">Attiva notifiche desktop</div>
+                                </div>
+                            </div>
+                            <!-- search input -->
+                            <div class="search_contact w-100 p-2">
+                                <div class="search_form d-flex align-items-center bg-white">
+                                    <button class="search_button text-secondary border-0 bg-white mx-3"><i class="fas fa-search"></i></button>
+                                    <input type="text" class="search_box w-100 border-0" placeholder="Cerca o inizia una nuova chat">
                                 </div>
                             </div>
                             <!-- contacts -->
                             <div class="contact_list w-100">
                                 <ul>
                                     <li 
-                                        class="py-1" v-for="(contact, i) in contacts">
+                                        class="py-3" v-for="(contact, i) in contacts">
 
                                         <img class="rounded-circle me-2" :src="'img/' + contact.avatar" alt="" />
                                         <span class="align-top">{{contact.name}}</span>
