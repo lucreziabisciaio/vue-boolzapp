@@ -64,6 +64,7 @@ main {
 }
 
 .message_box .sent {
+    width: 300px;
     max-width: 300px;
     border-radius: 15px;
     float: right;
@@ -71,6 +72,7 @@ main {
 }
 
 .message_box .received {
+    width: 300px;
     max-width: 300px;
     border-radius: 15px;
     float: left;
