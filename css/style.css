@@ -1,3 +1,7 @@
+.content_container {
+    background-color: pink;
+}
+
 .contact_list ul > li {
     list-style: none;
 }

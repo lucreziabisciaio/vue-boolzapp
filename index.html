@@ -17,14 +17,14 @@
 
     <div id="app">
         <div class="container-fluid">
-            <div class="container">
+            <div class="container content_container">
 
                 <div class="row">
                     <!-- NAVBAR -->
-                    <div class="col-lg-4">
-                        <div class="navbar d-flex flex-column">
+                    <div class="col-lg-4 g-0">
+                        <nav class="d-flex flex-column">
                             <!-- user area -->
-                            <div class="user_info w-100 d-flex justify-content-between align-items-center bg-light p-2">
+                            <div class="user_info w-100 d-flex justify-content-between align-items-center bg-light py-2 px-3">
                                 <div class="profile_pic me-2">
                                     <img class="rounded-circle" :src="'img/' + userInfo.userAvatar" alt="">
                                     <span>{{userInfo.userName}}</span>
@@ -65,12 +65,30 @@
                                 </ul>
                             </div>
 
-                        </div>
+                        </nav>
                     </div>
 
                     <!-- MAIN -->
-                    <div class="col-lg-8">
-
+                    <div class="col-lg-8 g-0">
+                        <main class="w-100 d-flex flex-column">
+                            <!-- top -->
+                            <div class="main_header">
+                                <div class="user_info w-100 d-flex justify-content-between align-items-center bg-light py-2 px-3">
+                                    <div class="profile_pic me-2">
+                                        <img class="rounded-circle" :src="'img/' + contacts[0].avatar" alt="">
+                                        <span>{{contacts[0].name}}</span>
+                                    </div>
+                                    
+                                    <div class="top_icons text-secondary">
+                                        <i class="fas fa-search"></i>
+                                        <i class="fas fa-paperclip"></i>
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- main content -->
+                            <div></div>
+                        </main>
                     </div>
 
                 </div>
