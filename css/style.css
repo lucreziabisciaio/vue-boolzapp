@@ -1,5 +1,11 @@
 .content_container {
+    margin: 20px 0;
     background-color: pink;
+}
+
+nav {
+    height: 90vh;
+    background-color: palevioletred;
 }
 
 .contact_list ul > li {
