@@ -4,12 +4,11 @@
 
 nav {
     height: 90vh;
-    background-color: palevioletred;
 }
 
 main {
     height: 90vh;
-    background-color: pink;
+    background-image: url('../img/mine.jpg');
 }
 
 /* ----------------------------------------------- */
@@ -48,11 +47,20 @@ main {
   background-color: #fafafa;
 }
 
-.search_box {
+.search_contact .search_form > input::placeholder {
     font-size: 12px;
 }
 
 .main_footer {
-    height: 90px;
-    background-color: purple;
+    height: 70px;
+    background-color: #f4eee9;
+}
+
+.main_footer .emoji > i,
+.main_footer .microphone > i {
+    font-size: 20px;
+}
+
+.main_footer .message_input > input::placeholder {
+    font-size: 13px;
 }
