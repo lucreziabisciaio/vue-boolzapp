@@ -89,6 +89,10 @@ new Vue({
                 ],
             },
         ],
+        userInfo: {
+            userName: 'Nome Utente',
+            userAvatar: 'avatar_io.jpg'
+        }
 
 
     },

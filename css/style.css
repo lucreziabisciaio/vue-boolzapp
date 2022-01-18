@@ -3,5 +3,14 @@
 }
 
 .contact_list ul li > img {
-    width: 80px;
+    width: 70px;
+}
+
+.profile_pic > img {
+    width: 60px;
+}
+
+.top_icons > i {
+    font-size: 20px;
+    margin: 0 5px;
 }

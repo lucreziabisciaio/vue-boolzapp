@@ -6,8 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boolzapp</title>
 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
     <link rel="stylesheet" href="css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 </head>
 <body>
@@ -18,9 +21,23 @@
 
                 <div class="row">
                     <!-- NAVBAR -->
-                    <div class="col-4">
-                        <div class="navbar">
-                            <div class="contact_list">
+                    <div class="col-lg-4">
+                        <div class="navbar d-flex flex-column">
+                            <!-- user area -->
+                            <div class="user_info w-100 d-flex justify-content-between align-items-center p-2 bg-light">
+                                <div class="profile_pic me-2">
+                                    <img class="rounded-circle" :src="'img/' + userInfo.userAvatar" alt="">
+                                    <span>{{userInfo.userName}}</span>
+                                </div>
+
+                                <div class="top_icons text-secondary">
+                                    <i class="fas fa-circle-notch"></i>
+                                    <i class="fas fa-comment-alt"></i>
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </div>
+                            </div>
+                            <!-- contacts -->
+                            <div class="contact_list w-100">
                                 <ul>
                                     <li 
                                         class="py-1" v-for="(contact, i) in contacts">
@@ -30,11 +47,12 @@
                                     </li>
                                 </ul>
                             </div>
+
                         </div>
                     </div>
 
                     <!-- MAIN -->
-                    <div class="col-8">
+                    <div class="col-lg-8">
 
                     </div>
 
