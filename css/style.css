@@ -1,12 +1,18 @@
 .content_container {
     margin: 20px 0;
-    background-color: pink;
 }
 
 nav {
     height: 90vh;
     background-color: palevioletred;
 }
+
+main {
+    height: 90vh;
+    background-color: pink;
+}
+
+/* ----------------------------------------------- */
 
 .contact_list ul > li {
     list-style: none;
@@ -44,4 +50,9 @@ nav {
 
 .search_box {
     font-size: 12px;
+}
+
+.main_footer {
+    height: 90px;
+    background-color: purple;
 }
