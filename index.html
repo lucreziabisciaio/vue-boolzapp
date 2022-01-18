@@ -24,7 +24,7 @@
                     <div class="col-lg-4">
                         <div class="navbar d-flex flex-column">
                             <!-- user area -->
-                            <div class="user_info w-100 d-flex justify-content-between align-items-center p-2 bg-light">
+                            <div class="user_info w-100 d-flex justify-content-between align-items-center bg-light p-2">
                                 <div class="profile_pic me-2">
                                     <img class="rounded-circle" :src="'img/' + userInfo.userAvatar" alt="">
                                     <span>{{userInfo.userName}}</span>
@@ -34,6 +34,16 @@
                                     <i class="fas fa-circle-notch"></i>
                                     <i class="fas fa-comment-alt"></i>
                                     <i class="fas fa-ellipsis-v"></i>
+                                </div>
+                            </div>
+                            <!-- notifiche -->
+                            <div class="notification w-100 d-flex justify-content-start align-items-center p-3">
+                                <div class="notif_icon rounded-circle bg-white p-2 me-2">
+                                    <i class="fas fa-bell-slash"></i>
+                                </div>
+                                <div class="notif_alert">
+                                    <div>Ricevi notifiche di nuovi messaggi</div>
+                                    <div class="text-decoration-underline text-secondary">Attiva notifiche desktop</div>
                                 </div>
                             </div>
                             <!-- contacts -->
