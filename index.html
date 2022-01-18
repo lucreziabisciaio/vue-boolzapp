@@ -16,15 +16,28 @@
         <div class="container-fluid">
             <div class="container">
 
-                <div class="navbar">
-                    <div class="contact_list">
-                        <ul>
-                            <li v-for="(contact, i) in contacts">
-                                <img :src="'img/' + contact.avatar" alt="" />
-                                {{contact.name}}
-                            </li>
-                        </ul>
+                <div class="row">
+                    <!-- NAVBAR -->
+                    <div class="col-4">
+                        <div class="navbar">
+                            <div class="contact_list">
+                                <ul>
+                                    <li 
+                                        class="py-1" v-for="(contact, i) in contacts">
+
+                                        <img class="rounded-circle me-2" :src="'img/' + contact.avatar" alt="" />
+                                        <span class="align-top">{{contact.name}}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
+
+                    <!-- MAIN -->
+                    <div class="col-8">
+
+                    </div>
+
                 </div>
 
             </div>
