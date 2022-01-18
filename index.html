@@ -16,8 +16,9 @@
 <body>
 
     <div id="app">
-        <div class="container-fluid">
-            <div class="container content_container">
+        <div class="container-fluid gradient_bg">
+
+            <div class="container py-4">
 
                 <div class="row">
                     <!-- NAVBAR -->
@@ -88,7 +89,7 @@
                             </div>
                             <!-- main content -->
                             <div class="main_content h-100 mx-5">
-                                <div class="chat d-flex flex-column my-5">
+                                <div class="chat d-flex flex-column my-4">
                                     <!-- per ogni message mell'array messages in contacts[o] -->
                                     <div class="message_box" v-for="(message, index) in contacts[0].messages">
                                         <div class="message p-3 my-3" :class="message.status === 'sent' ? 'sent':'received' ">
