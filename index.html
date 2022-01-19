@@ -55,7 +55,6 @@
                                         type="text" 
                                         class="w-100 border-0" 
                                         placeholder="Cerca o inizia una nuova chat"
-                                        @keyup.enter="sendMessage"
                                     >
                                 </div>
                             </div>
@@ -111,7 +110,12 @@
                                 </div>
 
                                 <div class="message_input w-100">
-                                    <input class="form-control" type="text" placeholder="Scrivi un messaggio">
+                                    <input 
+                                        class="form-control"
+                                        type="text"
+                                        placeholder="Scrivi un messaggio"
+                                        @keyup.enter="sendMessage"
+                                    >
                                 </div>
 
                                 <div class="microphone text-secondary mx-4">
