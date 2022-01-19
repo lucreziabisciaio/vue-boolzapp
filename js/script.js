@@ -111,7 +111,7 @@ new Vue({
             if (this.inputMessage !== '') {
                 // push all'interno dell'array messages di ciascun oggetto 
                 this.contacts[this.currentIndex].messages.push({
-                    date: '',
+                    date: '10/01/2020 15:50:00',
                     text: this.inputMessage,
                     status: 'sent'
                 })
@@ -121,11 +121,14 @@ new Vue({
             // risposta automatica
             setTimeout(() => {
                 this.contacts[this.currentIndex].messages.push({
-                    date: '',
+                    date: '10/01/2020 15:50:00',
                     text: 'Daje',
                     status: 'received'
                 });
             }, 1000);
+        },
+        deleteMessage: function (index) {
+            this.contacts[this.currentIndex].messages.splice(index, 1);
         },
     },
     computed: {

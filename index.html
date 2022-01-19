@@ -100,7 +100,11 @@
                                 <div class="chat d-flex flex-column my-4">
                                     <!-- per ogni message mell'array messages in contacts[currentIndex] -->
                                     <div class="message_box" v-for="(message, index) in contacts[currentIndex].messages">
-                                        <div class="message p-3 my-3" :class="message.status === 'sent' ? 'sent':'received' ">
+                                        <div 
+                                            class="message p-3 my-3"
+                                            :class="message.status === 'sent' ? 'sent':'received' "
+                                        >
+                                            <div class="pointer float-end" @click="deleteMessage(index)"><i class="far fa-trash-alt"></i></div>
                                             <div class="message_text">{{message.text}}</div>
                                             <div class="message_date text-secondary text-end">{{message.date}}</div>
                                         </div>
