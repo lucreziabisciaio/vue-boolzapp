@@ -2,6 +2,7 @@ new Vue({
     el: "#app",
     data: {
         currentIndex: 0,
+        inputMessage: '',
         contacts: [
             {
                 name: 'Michele',
@@ -92,14 +93,26 @@ new Vue({
         ],
         userInfo: {
             userName: 'Nome Utente',
-            userAvatar: 'avatar_io.jpg'
-        }
+            userAvatar: 'avatar_io.jpg',
+        },
 
 
     },
+    
     methods: {
+        // funzione nel click
         currentContact: function (i) {
             this.currentIndex = i;
-        }
+        },
+        // funzione nell'input
+        sendMessage: function () {
+            this.contacts[this.currentIndex].messages.push({
+                date: '',
+                text: this.inputMessage,
+                status: 'sent'
+            })
+        },
+
+
     },
 })

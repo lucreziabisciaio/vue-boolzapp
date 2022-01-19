@@ -51,7 +51,12 @@
                             <div class="search_contact w-100 p-2">
                                 <div class="search_form d-flex align-items-center bg-white">
                                     <button class="text-secondary border-0 bg-white mx-3"><i class="fas fa-search"></i></button>
-                                    <input type="text" class="w-100 border-0" placeholder="Cerca o inizia una nuova chat">
+                                    <input 
+                                        type="text" 
+                                        class="w-100 border-0" 
+                                        placeholder="Cerca o inizia una nuova chat"
+                                        @keyup.enter="sendMessage"
+                                    >
                                 </div>
                             </div>
                             <!-- contacts -->
