@@ -106,11 +106,25 @@ new Vue({
         },
         // funzione nell'input
         sendMessage: function () {
-            this.contacts[this.currentIndex].messages.push({
-                date: '',
-                text: this.inputMessage,
-                status: 'sent'
-            })
+            // evita di mandare messaggi vuoti
+            if (this.inputMessage !== '') {
+                // push all'interno dell'array messages di ciascun oggetto 
+                this.contacts[this.currentIndex].messages.push({
+                    date: '',
+                    text: this.inputMessage,
+                    status: 'sent'
+                })
+            }
+            // svuoto il placeholder dell'input
+            this.inputMessage = '';
+            // risposta automatica
+            setTimeout(() => {
+                this.contacts[this.currentIndex].messages.push({
+                    date: '',
+                    text: 'Daje',
+                    status: 'received'
+                });
+            }, 1000);
         },
 
 
