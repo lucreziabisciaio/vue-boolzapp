@@ -3,6 +3,7 @@ new Vue({
     data: {
         currentIndex: 0,
         inputMessage: '',
+        searchContact: '',
         contacts: [
             {
                 name: 'Michele',
@@ -126,7 +127,12 @@ new Vue({
                 });
             }, 1000);
         },
-
-
     },
+    computed: {
+        filteredContacts() {
+            return this.contacts.filter(contact => {
+                return contact.name.toLowerCase().includes(this.searchContact.toLowerCase());
+            })
+        }
+    }
 })
