@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 </head>
 <body>
 
@@ -27,14 +27,14 @@
                             <!-- user area -->
                             <div class="user_info w-100 d-flex justify-content-between align-items-center bg-light py-2 px-3">
                                 <div class="profile_pic me-2">
-                                    <img class="rounded-circle" :src="'img/' + userInfo.userAvatar" alt="">
-                                    <span>{{userInfo.userName}}</span>
+                                    <img class="pointer rounded-circle" :src="'img/' + userInfo.userAvatar" alt="">
+                                    <span class="pointer">{{userInfo.userName}}</span>
                                 </div>
 
                                 <div class="top_icons text-secondary">
-                                    <i class="fas fa-circle-notch"></i>
-                                    <i class="fas fa-comment-alt"></i>
-                                    <i class="fas fa-ellipsis-v"></i>
+                                    <i class="fas fa-circle-notch pointer"></i>
+                                    <i class="fas fa-comment-alt pointer"></i>
+                                    <i class="fas fa-ellipsis-v pointer"></i>
                                 </div>
                             </div>
                             <!-- notifiche -->
@@ -44,7 +44,7 @@
                                 </div>
                                 <div class="notif_alert">
                                     <div>Ricevi notifiche di nuovi messaggi</div>
-                                    <div class="enable_notif text-decoration-underline text-secondary">Attiva notifiche desktop</div>
+                                    <div class="pointer text-decoration-underline text-secondary">Attiva notifiche desktop</div>
                                 </div>
                             </div>
                             <!-- search input -->
@@ -58,7 +58,7 @@
                             <div class="contact_list w-100">
                                 <ul>
                                     <li 
-                                        class="py-3" v-for="(contact, i) in contacts">
+                                        class="pointer py-3" v-for="(contact, index) in contacts" @click="currentContact(index)">
 
                                         <img class="rounded-circle me-2" :src="'img/' + contact.avatar" alt="" />
                                         <span class="align-top">{{contact.name}}</span>
@@ -76,22 +76,22 @@
                             <div class="main_header">
                                 <div class="user_info w-100 d-flex justify-content-between align-items-center bg-light py-2 px-3">
                                     <div class="profile_pic me-2">
-                                        <img class="rounded-circle" :src="'img/' + contacts[0].avatar" alt="">
-                                        <span>{{contacts[0].name}}</span>
+                                        <img class="pointer rounded-circle" :src="'img/' + contacts[currentIndex].avatar" alt="">
+                                        <span class="pointer">{{contacts[currentIndex].name}}</span>
                                     </div>
                                     
                                     <div class="top_icons text-secondary">
-                                        <i class="fas fa-search"></i>
-                                        <i class="fas fa-paperclip"></i>
-                                        <i class="fas fa-ellipsis-v"></i>
+                                        <i class="fas fa-search pointer"></i>
+                                        <i class="fas fa-paperclip pointer"></i>
+                                        <i class="fas fa-ellipsis-v pointer"></i>
                                     </div>
                                 </div>
                             </div>
                             <!-- main content -->
                             <div class="main_content h-100 mx-5">
                                 <div class="chat d-flex flex-column my-4">
-                                    <!-- per ogni message mell'array messages in contacts[o] -->
-                                    <div class="message_box" v-for="(message, index) in contacts[0].messages">
+                                    <!-- per ogni message mell'array messages in contacts[currentIndex] -->
+                                    <div class="message_box" v-for="(message, index) in contacts[currentIndex].messages">
                                         <div class="message p-3 my-3" :class="message.status === 'sent' ? 'sent':'received' ">
                                             <div class="message_text">{{message.text}}</div>
                                             <div class="message_date text-secondary text-end">{{message.date}}</div>
@@ -102,7 +102,7 @@
                             <!-- main footer -->
                             <div class="main_footer d-flex justify-content-between align-items-center text-center">
                                 <div class="emoji text-secondary mx-4">
-                                    <i class="far fa-smile"></i>
+                                    <i class="far fa-smile pointer"></i>
                                 </div>
 
                                 <div class="message_input w-100">
@@ -110,7 +110,7 @@
                                 </div>
 
                                 <div class="microphone text-secondary mx-4">
-                                    <i class="fas fa-microphone"></i>
+                                    <i class="fas fa-microphone pointer"></i>
                                 </div>
                             </div>
                         </main>

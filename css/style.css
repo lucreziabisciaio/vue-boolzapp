@@ -16,6 +16,10 @@ main {
     background-color: #dadcd7; */
 }
 
+.pointer {
+    cursor: pointer;
+}
+
 /* ----------------------------------------------- */
 
 /* NAVBAR - header */
@@ -37,10 +41,6 @@ main {
 .notif_icon > i {
     font-size: 25px;
     color: #8fd9fc;
-}
-
-.enable_notif {
-    cursor: pointer;
 }
 
 /* NAVBAR - serch form */
