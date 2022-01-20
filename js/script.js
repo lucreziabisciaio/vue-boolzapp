@@ -7,7 +7,7 @@ new Vue({
         contacts: [
             {
                 name: 'Michele',
-                avatar: 'avatar_1.jpg',
+                avatar: '_1',
                 visible: true,
                 messages: [
                     {
@@ -30,7 +30,7 @@ new Vue({
 
             {
                 name: 'Fabio',
-                avatar: 'avatar_2.jpg',
+                avatar: '_2',
                 visible: true,
                 messages: [
                     {
@@ -53,7 +53,7 @@ new Vue({
 
             {
                 name: 'Samuele',
-                avatar: 'avatar_3.jpg',
+                avatar: '_3',
                 visible: true,
                 messages: [
                     {
@@ -76,7 +76,7 @@ new Vue({
 
             {
                 name: 'Luisa',
-                avatar: 'avatar_4.jpg',
+                avatar: '_4',
                 visible: true,
                 messages: [
                     {
@@ -101,6 +101,9 @@ new Vue({
     },
     
     methods: {
+        showAvatar: function (contact) {
+            return `img/avatar${contact.avatar}.jpg`
+        },
         // funzione nel click
         currentContact: function (i) {
             this.currentIndex = i;

@@ -67,12 +67,11 @@
                                     class="pointer py-3"
                                     v-for="(contact, index) in contacts"
                                     @click="currentContact(index)"
+                                    v-if="contact.name.toLowerCase().includes(searchContact)"
                                 >
-                                    <!-- filtro di ricerca creato con v-if -->
-                                    <div v-if="contact.name.toLowerCase().includes(searchContact)">
-                                        <img class="contact_img rounded-circle me-2" :src="'img/' + contact.avatar" alt="" />
-                                        <span class="align-top">{{contact.name}}</span>
-                                    </div>
+                                    <img class="contact_img rounded-circle me-2" :src="showAvatar(contact)" alt="" />
+                                    <span class="align-top">{{contact.name}}</span>
+                                    
                                 </li>
                             </ul>
 
@@ -86,7 +85,7 @@
                             <div class="main_header d-flex justify-content-between align-items-center bg-light py-2 px-3">
 
                                 <div class="contact_info d-flex justify-content-between align-items-center me-2">
-                                    <img class="pointer rounded-circle" :src="'img/' + contacts[currentIndex].avatar" alt="">
+                                    <img class="pointer rounded-circle" :src="showAvatar(contacts[currentIndex])" alt="">
 
                                     <div class="last_seen">
                                         <div class="pointer">{{contacts[currentIndex].name}}</div>
