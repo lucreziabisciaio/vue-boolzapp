@@ -69,11 +69,11 @@
                                     class="pointer py-3"
                                     v-for="(contact, index) in contacts"
                                     @click="currentContact(index)"
-                                    v-if="contact.name.toLowerCase().includes(searchContact)"
-                                >
-                                    <img class="contact_img rounded-circle me-2" :src="showAvatar(contact)" alt="" />
-                                    <span class="align-top">{{contact.name}}</span>
-                                    
+                                >   
+                                    <div v-if="contact.name.toLowerCase().includes(searchContact)">
+                                        <img class="contact_img rounded-circle me-2" :src="showAvatar(contact)" alt="" />
+                                        <span class="align-top">{{contact.name}}</span>
+                                    </div>
                                 </li>
                             </ul>
 
