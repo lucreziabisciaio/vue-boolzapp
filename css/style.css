@@ -1,3 +1,4 @@
+/* MACRO CONTAINER */
 nav {
     height: 90vh;
 }
@@ -7,64 +8,68 @@ main {
     background-image: url('../img/mine.jpg');
 }
 
-/* ----------------------------------------------- */
-
-.gradient_bg {
-    height: 100vh;
-    background: linear-gradient(to bottom, #009688 0%, #009688 15%, #dbdbd3 15%, #dbdbd3 100%);
-    /* background-color: #019688;
-    background-color: #dadcd7; */
+/* UTILITY */
+.small_text {
+    font-size: 11px;
 }
 
 .pointer {
     cursor: pointer;
 }
 
-/* ----------------------------------------------- */
+/* BG COLOR */
+.gradient_bg {
+    height: 100vh;
+    background: linear-gradient(to bottom, #009688 0%, #009688 15%, #dbdbd3 15%, #dbdbd3 100%);
+}
 
-/* NAVBAR - header */
-.profile_pic > img {
+.lightgray_bg {
+  background-color: #fafafa;
+}
+
+.turquoise_bg {
+    background-color: #8fd9fc;
+}
+
+/* IMG */
+.user_info > img,
+.contact_info > img {
     width: 60px;
 }
+
+.contact_img {
+    width: 70px;
+}
+
+/* ICONS */
 
 .top_icons > i {
     font-size: 20px;
     margin: 0 5px;
 }
 
-/* NAVBAR - notification */
-
-.notification {
-    background-color: #8fd9fc;
-}
-
 .notif_icon > i {
     font-size: 25px;
-    color: #8fd9fc;
 }
 
-/* NAVBAR - serch form */
-
-.search_contact {
-  background-color: #fafafa;
+.main_footer .emoji > i,
+.main_footer .microphone > i {
+    font-size: 20px;
 }
 
+/* ----------------------------------------------- */
+
+/* NAVBAR */
 .search_contact .search_form > input::placeholder {
     font-size: 12px;
 }
-
-/* NAVBAR - contacts */
 
 .contact_list > li {
     list-style: none;
 }
 
-.contact_list .filtered_research > img {
-    width: 70px;
-}
 
 /* MAIN - content */
-
 .message_box .sent {
     width: 300px;
     max-width: 300px;
@@ -80,25 +85,12 @@ main {
     background-color: #fff;
 }
 
-.message_box .message_date {
-    font-size: 11px;
-}
-
 /* MAIN - footer */
 .main_footer {
     height: 70px;
     background-color: #f4eee9;
 }
 
-.main_footer .emoji > i,
-.main_footer .microphone > i {
-    font-size: 20px;
-}
-
 .main_footer .message_input > input::placeholder {
     font-size: 13px;
-}
-
-.last_seen {
-    font-size: 11px;
 }
