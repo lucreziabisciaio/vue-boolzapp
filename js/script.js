@@ -131,11 +131,11 @@ new Vue({
             this.contacts[this.currentIndex].messages.splice(index, 1);
         },
     },
-    computed: {
-        filteredContacts() {
-            return this.contacts.filter(contact => {
-                return contact.name.toLowerCase().includes(this.searchContact.toLowerCase());
-            })
-        }
-    }
+    // computed: {
+    //     filteredContacts() {
+    //         return this.contacts.filter(contact => {
+    //             return contact.name.toLowerCase().includes(this.searchContact.toLowerCase());
+    //         })
+    //     }
+    // }
 })

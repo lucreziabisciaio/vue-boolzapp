@@ -55,18 +55,15 @@ main {
 
 /* NAVBAR - contacts */
 
-.contact_list ul > li {
+.contact_list > li {
     list-style: none;
 }
 
-.contact_list ul li > img {
+.contact_list .filtered_research > img {
     width: 70px;
 }
 
 /* MAIN - content */
-.chat > .message_box {
-    width: 100%;
-}
 
 .message_box .sent {
     width: 300px;
@@ -80,11 +77,10 @@ main {
     width: 300px;
     max-width: 300px;
     border-radius: 15px;
-    float: left;
     background-color: #fff;
 }
 
-.message .message_date {
+.message_box .message_date {
     font-size: 11px;
 }
 
@@ -101,4 +97,8 @@ main {
 
 .main_footer .message_input > input::placeholder {
     font-size: 13px;
+}
+
+.last_seen {
+    font-size: 11px;
 }
