@@ -54,7 +54,7 @@
                                 <div class="search_form d-flex align-items-center bg-white">
                                     <!-- icona lente -->
                                     <button class="text-secondary border-0 bg-white mx-3"><i class="fas fa-search"></i></button>
-                                    <!-- input text area -->
+                                    <!-- input search area -->
                                     <input 
                                         type="text" 
                                         class="w-100 border-0" 
@@ -65,11 +65,13 @@
                             </div>
                             <!-- contacts -->
                             <ul class="contact_list overflow-auto">
+                                <!-- ciclo  v-for che mi stampa un li per ogni contatto nell'array -->
                                 <li 
                                     class="my-4 pointer"
                                     v-for="(contact, index) in contacts"
                                     @click="currentContact(index)"
                                 >   
+                                    <!-- tramite il v-if filtro la lista dei contatti srivendo all'interno del search input -->
                                     <div v-if="contact.name.toLowerCase().includes(searchContact)">
                                         <img class="contact_img rounded-circle me-2" :src="showAvatar(contact)" alt="" />
                                         <span class="align-top">{{contact.name}}</span>
@@ -91,6 +93,7 @@
 
                                     <div class="last_seen">
                                         <div class="pointer">{{contacts[currentIndex].name}}</div>
+                                        <!-- la data dell'ultimo messaggio attuale (length - 1) del contatto attuale (contacts[currentIndex]) -->
                                         <div class="small_text">Ultimo accesso oggi alle {{contacts[currentIndex].messages[lastSeen(currentIndex)].date}}</div>
                                     </div>
                                 </div>
@@ -110,12 +113,16 @@
                                         class="message position-relative text-break p-3 my-3"
                                         :class="message.status"
                                     >
+                                        <!-- icona del drop down menù -->
                                         <div class="pointer float-end" @click="dropdownMenu(index)"><i class="fas fa-chevron-down"></i></div>
+                                        <!-- message content -->
                                         <div class="message_text">{{message.text}}</div>
                                         <div class="small_text text-secondary text-end">{{message.date}}</div>
                                         <!-- dropdown menu -->
+                                        <!-- TO FIX: menù non si chiude (toggle?) + passa da un messaggio eliminato all'altro quando aperto -->
                                         <div class="dropdown position-absolute" v-if="modal === index">
                                             <div class="message_info pointer">Message info</div>
+                                            <!-- TO FIX > deleteMessage (dà errore all'ultimo messaggio eliminato) -->
                                             <div class="delete_message pointer" @click="deleteMessage(index)">Delete message</div>
                                         </div>
                                     </div>
@@ -123,10 +130,11 @@
                             </div>
                             <!-- main footer -->
                             <div class="main_footer d-flex justify-content-between align-items-center text-center">
+                                <!-- emoji -->
                                 <div class="emoji text-secondary mx-4">
                                     <i class="far fa-smile pointer"></i>
                                 </div>
-
+                                <!-- input text area: qui invio il messaggio nella chat corrente -->
                                 <div class="message_input w-100">
                                     <input 
                                         class="form-control"
@@ -136,7 +144,7 @@
                                         @keyup.enter="sendMessage(contacts[currentIndex])"
                                     >
                                 </div>
-
+                                <!-- icona microfono -->
                                 <div class="microphone text-secondary mx-4">
                                     <i class="fas fa-microphone pointer"></i>
                                 </div>

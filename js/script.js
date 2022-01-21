@@ -108,7 +108,7 @@ new Vue({
         showAvatar: function (contact) {
             return `img/avatar${contact.avatar}.jpg`
         },
-        // funzione nel click
+        // funzione nel click: prende il contatto selezionato
         currentContact: function (i) {
             this.currentIndex = i;
         },
@@ -131,8 +131,7 @@ new Vue({
             }
             // svuoto il placeholder dell'input
             this.inputMessage = '';
-            // risposta automatica presa da array di risposte randomiche
-            
+            // risposta automatica randomica dopo 1 sec.
             setTimeout(() => {
                 this.contacts[this.currentIndex].messages.push({
                     date: this.getDate(),
@@ -143,7 +142,7 @@ new Vue({
         },
         // funzione che ritorna la data/ora dell'ultimo messaggio in chat
         lastSeen: function(index) {  
-            return this.contacts[index].messages.length -1;
+            return this.contacts[index].messages.length - 1;
         },
         // funzione che apre/chiude il dropdown menu
         dropdownMenu: function(index) {
