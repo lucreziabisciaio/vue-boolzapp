@@ -142,7 +142,8 @@ new Vue({
         },
         // funzione che ritorna la data/ora dell'ultimo messaggio in chat
         lastSeen: function(index) {  
-            return this.contacts[index].messages.length - 1;
+            let lastMessage = this.contacts[index].messages.length - 1;
+            return this.contacts[index].messages[lastMessage].date;
         },
         // funzione che apre/chiude il dropdown menu
         dropdownMenu: function(index) {
