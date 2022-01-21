@@ -152,7 +152,11 @@ new Vue({
         deleteMessage: function (index) {
             this.contacts[this.currentIndex].messages.splice(index, 1);
         },
-         
+        addGrayBg: function(index) {
+            if (index % 2 !== 0) {
+                return 'gray'
+            }
+        }
     },
     // computed: {
     //     filteredContacts() {

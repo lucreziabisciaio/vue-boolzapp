@@ -31,6 +31,10 @@ main {
     background-color: #8fd9fc;
 }
 
+.gray {
+    background-color: #f4f5f5;
+}
+
 /* IMG */
 .user_info > img,
 .contact_info > img {
