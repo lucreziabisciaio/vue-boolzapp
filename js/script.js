@@ -153,7 +153,7 @@ new Vue({
             this.contacts[this.currentIndex].messages.splice(index, 1);
         },
         addGrayBg: function(index) {
-            if (index % 2 !== 0) {
+            if (index % 2 === 0) {
                 return 'gray'
             }
         }
