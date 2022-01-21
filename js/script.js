@@ -97,6 +97,9 @@ new Vue({
             userName: 'Nome Utente',
             userAvatar: 'avatar_io.jpg',
         },
+        randomAnswersList: [
+            'Daje', 'Ci sta', 'Ah, non saprei', 'Io al massimo te posso cantà una canzone', 'Prova a dire Coca Cola senza toccare le labbra', 'Bella!', ':O'
+        ],
 
 
     },
@@ -109,33 +112,34 @@ new Vue({
         currentContact: function (i) {
             this.currentIndex = i;
         },
+        getDate: function () {
+            return dayjs().format('DD/MM/YYYY HH:mm:ss')
+        },
+        getRandomAnswers: function () {
+            return Math.floor(Math.random() * this.randomAnswersList.length);
+        },
         // funzione nell'input
         sendMessage: function (contact) {
             // evita di mandare messaggi vuoti
             if (this.inputMessage !== '') {
                 // push all'interno dell'array messages di ciascun oggetto 
                 contact.messages.push({
-                    date: getDate(),
+                    date: this.getDate(),
                     text: this.inputMessage,
                     status: 'sent'
                 })
             }
             // svuoto il placeholder dell'input
             this.inputMessage = '';
-            // risposta automatica
+            // risposta automatica presa da array di risposte randomiche
+            
             setTimeout(() => {
                 this.contacts[this.currentIndex].messages.push({
-                    date: getDate(),
-                    text: 'Daje',
+                    date: this.getDate(),
+                    text: this.randomAnswersList[this.getRandomAnswers()],
                     status: 'received'
                 });
             }, 1000);
-        },
-        getDate: function () {
-          return dayjs().format('DD/MM/YYYY HH:mm:ss');
-        },
-        deleteMessage: function (index) {
-            this.contacts[this.currentIndex].messages.splice(index, 1);
         },
         // funzione che ritorna la data/ora dell'ultimo messaggio in chat
         lastSeen: function(index) {  
@@ -144,6 +148,9 @@ new Vue({
         // funzione che apre/chiude il dropdown menu
         dropdownMenu: function(index) {
             this.modal === index ? false : this.modal = index;
+        },
+        deleteMessage: function (index) {
+            this.contacts[this.currentIndex].messages.splice(index, 1);
         },
          
     },
