@@ -91,7 +91,7 @@
 
                                     <div class="last_seen">
                                         <div class="pointer">{{contacts[currentIndex].name}}</div>
-                                        <div class="small_text">Ultimo accesso oggi alle</div>
+                                        <div class="small_text">Ultimo accesso oggi alle {{contacts[currentIndex].messages[lastSeen(currentIndex)].date}}</div>
                                     </div>
                                 </div>
                                     
@@ -128,7 +128,7 @@
                                         type="text"
                                         placeholder="Scrivi un messaggio"
                                         v-model="inputMessage"
-                                        @keyup.enter="sendMessage"
+                                        @keyup.enter="sendMessage(contacts[currentIndex])"
                                     >
                                 </div>
 

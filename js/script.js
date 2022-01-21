@@ -109,11 +109,11 @@ new Vue({
             this.currentIndex = i;
         },
         // funzione nell'input
-        sendMessage: function () {
+        sendMessage: function (contact) {
             // evita di mandare messaggi vuoti
             if (this.inputMessage !== '') {
                 // push all'interno dell'array messages di ciascun oggetto 
-                this.contacts[this.currentIndex].messages.push({
+                contact.messages.push({
                     date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
                     text: this.inputMessage,
                     status: 'sent'
@@ -133,6 +133,10 @@ new Vue({
         deleteMessage: function (index) {
             this.contacts[this.currentIndex].messages.splice(index, 1);
         },
+        lastSeen: function(index) {  
+            return this.contacts[index].messages.length -1;
+        },
+         
     },
     // computed: {
     //     filteredContacts() {
