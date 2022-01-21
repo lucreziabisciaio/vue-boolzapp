@@ -107,12 +107,17 @@
                                 <!-- per ogni message mell'array messages in contacts[currentIndex] -->
                                 <div class="message_box clearfix" v-for="(message, index) in contacts[currentIndex].messages">
                                     <div 
-                                        class="message text-break p-3 my-3"
+                                        class="message position-relative text-break p-3 my-3"
                                         :class="message.status"
                                     >
-                                        <div class="pointer float-end" @click="deleteMessage(index)"><i class="far fa-trash-alt"></i></div>
+                                        <div class="pointer float-end" @click="dropdownMenu(index)"><i class="fas fa-chevron-down"></i></div>
                                         <div class="message_text">{{message.text}}</div>
                                         <div class="small_text text-secondary text-end">{{message.date}}</div>
+                                        <!-- dropdown menu -->
+                                        <div class="dropdown position-absolute" v-if="modal === index">
+                                            <div class="message_info pointer">Message info</div>
+                                            <div class="delete_message pointer" @click="deleteMessage(index)">Delete message</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

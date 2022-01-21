@@ -85,6 +85,19 @@ main {
     background-color: #fff;
 }
 
+.dropdown {
+  top: 35px;
+  right: 15px;
+  padding: 15px 30px;
+  border-radius: 3px;
+  background-color: #fff;
+  z-index: 1;
+}
+
+.dropdown > div {
+    line-height: 37px;
+}
+
 /* MAIN - footer */
 .main_footer {
     height: 70px;

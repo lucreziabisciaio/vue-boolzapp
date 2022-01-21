@@ -4,6 +4,7 @@ new Vue({
         currentIndex: 0,
         inputMessage: '',
         searchContact: '',
+        modal: null,
         contacts: [
             {
                 name: 'Michele',
@@ -133,8 +134,13 @@ new Vue({
         deleteMessage: function (index) {
             this.contacts[this.currentIndex].messages.splice(index, 1);
         },
+        // funzione che ritorna la data/ora dell'ultimo messaggio in chat
         lastSeen: function(index) {  
             return this.contacts[index].messages.length -1;
+        },
+        // funzione che apre/chiude il dropdown menu
+        dropdownMenu: function(index) {
+            this.modal === index ? false : this.modal = index;
         },
          
     },
