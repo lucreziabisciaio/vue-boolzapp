@@ -115,7 +115,7 @@ new Vue({
             if (this.inputMessage !== '') {
                 // push all'interno dell'array messages di ciascun oggetto 
                 contact.messages.push({
-                    date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                    date: getDate(),
                     text: this.inputMessage,
                     status: 'sent'
                 })
@@ -125,11 +125,14 @@ new Vue({
             // risposta automatica
             setTimeout(() => {
                 this.contacts[this.currentIndex].messages.push({
-                    date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                    date: getDate(),
                     text: 'Daje',
                     status: 'received'
                 });
             }, 1000);
+        },
+        getDate: function () {
+          return dayjs().format('DD/MM/YYYY HH:mm:ss');
         },
         deleteMessage: function (index) {
             this.contacts[this.currentIndex].messages.splice(index, 1);
